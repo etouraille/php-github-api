@@ -54,7 +54,8 @@ class Client
 
         'api_limit'   => 5000,
         'api_version' => 'beta',
-
+        'per_page' => 60,
+        
         'cache_dir'   => null
     );
 
