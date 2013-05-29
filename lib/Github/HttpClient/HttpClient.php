@@ -33,7 +33,6 @@ class HttpClient implements HttpClientInterface
 
         'api_limit'   => 5000,
         'api_version' => 'beta',
-        'per_page' => 60,
 
         'cache_dir'   => null
     );
@@ -120,6 +119,7 @@ class HttpClient implements HttpClientInterface
      */
     public function get($path, array $parameters = array(), array $headers = array())
     {
+        $parameters['per_page']=60;
         if (0 < count($parameters)) {
             $path .= (false === strpos($path, '?') ? '?' : '&').http_build_query($parameters, '', '&');
         }
